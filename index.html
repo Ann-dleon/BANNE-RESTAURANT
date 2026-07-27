@@ -1,0 +1,944 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BANNE - Restaurante</title>
+  <link rel="icon" href="logo BANNE pulpito.png" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;900&family=Shojumaru&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="DOCS/style.css">
+</head>
+<body>
+
+  <!-- NAV BAR -->
+  <header class="top-nav">
+    <div class="nav-logo">
+      <a href="#" onclick="mostrarSeccion('inicio')" class="brand-logo">
+        <img src="logo BANNE pulpito.png" alt="BANNE" class="pulpo-nav-img">
+        <span class="brand-logo-text">BANNE</span>
+      </a>
+    </div>
+    <div class="nav-links" id="navLinks">
+      <a href="#" onclick="mostrarSeccion('inicio')" class="activo">INICIO</a>
+      <a href="#" onclick="mostrarSeccion('reserva')">RESERVAR</a>
+      <a href="#" onclick="mostrarSeccion('menu')">MENÚ</a>
+      <a href="#" onclick="mostrarSeccion('domicilio')">PEDIR A DOMICILIO</a>
+      <a href="#" onclick="mostrarSeccion('contacto')">CONTACTO</a>
+    </div>
+    <div class="nav-derecha">
+      <div class="social-links">
+        <a href="https://instagram.com/srg_nde" target="_blank" title="Instagram">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+        </a>
+        <a href="https://wa.me/50257722662" target="_blank" title="WhatsApp">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        </a>
+      </div>
+      <a href="#" onclick="mostrarSeccion('reserva')" class="btn-reservar-nav">RESERVAR AHORA</a>
+      <button class="nav-hamburger" onclick="toggleMenu()">&#9776;</button>
+    </div>
+  </header>
+
+  <!-- BANNER HERO -->
+  <section class="hero-banner" id="hero-banner">
+    <div class="hero-inner">
+      <div class="hero-texto">
+        <div class="hero-bienvenida">
+          <span class="linea-dorada"></span>
+          <span class="texto-bienvenida">BIENVENIDO A</span>
+          <span class="linea-dorada"></span>
+        </div>
+        <h1 class="hero-title">BANNE</h1>
+        <p class="hero-slogan">Sabor que te lleva lejos</p>
+        <p class="hero-descripcion">Cocina tropical, ingredientes frescos y experiencias inolvidables.</p>
+        <a href="#" onclick="mostrarSeccion('menu')" class="btn-ver-menu">
+          <span>&#127860;</span> VER MENÚ
+        </a>
+      </div>
+
+      <div class="hero-mascota">
+        <img src="logo BANNE pulpito.png" alt="BANNE Mascota" class="mascota-img">
+      </div>
+
+      <div class="hero-imagen-comida">
+        <div class="imagen-comida-mask">
+          <img src="COMIDA/PULPO A LA PARRILA.jpg" alt="Pulpo a la Parrilla">
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-wave">
+      <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
+        <path d="M0,64 C360,120 720,0 1080,64 C1260,96 1380,80 1440,64 L1440,120 L0,120 Z" fill="#FFF4E6"/>
+      </svg>
+    </div>
+  </section>
+
+  <!-- TARJETAS INFERIORES -->
+  <section class="tarjetas-inicio" id="tarjetas-inicio">
+    <div class="tarjeta" onclick="mostrarSeccion('reserva')">
+      <div class="tarjeta-icono">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+      </div>
+      <h3>RESERVAR MESA</h3>
+      <p>Asegura tu lugar y disfruta sin esperas.</p>
+      <span class="tarjeta-btn">RESERVAR</span>
+    </div>
+    <div class="tarjeta" onclick="mostrarSeccion('menu')">
+      <div class="tarjeta-icono">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+      </div>
+      <h3>VER MENÚ</h3>
+      <p>Explora nuestra variedad de platillos, bebidas y postres.</p>
+      <span class="tarjeta-btn">VER MENÚ</span>
+    </div>
+    <div class="tarjeta" onclick="mostrarSeccion('domicilio')">
+      <div class="tarjeta-icono">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="5" cy="17" r="3"/><circle cx="19" cy="17" r="3"/><path d="M12 17H3V4h12l4 4v9"/><path d="M12 4v4h4"/></svg>
+      </div>
+      <h3>PEDIR A DOMICILIO</h3>
+      <p>Tus favoritos, directo a la puerta de tu hogar.</p>
+      <span class="tarjeta-btn">PEDIR AHORA</span>
+    </div>
+  </section>
+
+  <!-- CONTENEDOR DINAMICO -->
+  <main id="contenido-dinamico">
+    
+    <!-- SECCION 1: RESERVAR MESA / EVENTO -->
+    <section class="seccion-oculta" id="seccion-reserva">
+        <div class="contenedor-formulario">
+            <div class="encabezado-seccion">
+              <h2>
+                RESERVAR MESA O EVENTO 
+                <img src="logo BANNE pulpito.png" alt="BANNE" class="pulpo-titulo-img">
+              </h2>
+              <p>Completa los datos y genera tu factura de reservacion.</p>
+            </div>
+            <form id="formReservaGeneral" class="formulario-detallado">
+                <div class="form-group">
+                    <label>Nombre Completo *</label>
+                    <input type="text" id="nombreReserva" required placeholder="Ej. Juan Perez">
+                </div>
+                <div class="form-group col-2">
+                  <div>
+                    <label>Telefono / WhatsApp *</label>
+                    <input type="tel" id="telReserva" required placeholder="Ej. 5772-2662">
+                  </div>
+                  <div>
+                    <label>Cantidad De Personas *</label>
+                    <input type="number" id="personasReserva" required min="1" placeholder="Ej. 4">
+                  </div>
+                </div>
+                
+                <div class="form-group col-2">
+                    <div>
+                      <label>Fecha del Servicio *</label>
+                      <input type="date" id="fechaReserva" required>
+                    </div>
+                    <div>
+                      <label>Canton / Sector / Direccion *</label>
+                      <input type="text" id="cantonReserva" required placeholder="Ej. Canton Centro, Sector 2">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Que deseas solicitar? *</label>
+                    <select id="tipoReserva" required onchange="toggleCamposEvento()">
+                        <option value="Mesa Normal">Reserva de Mesa (Restaurante)</option>
+                        <option value="Evento Privado">Servicio de Evento / Catering</option>
+                    </select>
+                </div>
+
+                <div id="camposMesaExtra" class="form-group">
+                    <label>Hora de llegada aproximada *</label>
+                    <input type="time" id="horaReservaMesa">
+                </div>
+
+                <div id="camposEventoExtra" style="display: none; flex-direction: column; gap: 18px;">
+                    <div class="form-group">
+                        <label>Motivo del Evento</label>
+                        <input type="text" id="motivoEvento" placeholder="Ej. Cumpleanos, Boda, etc.">
+                    </div>
+                    <div class="form-group col-2">
+                        <div>
+                            <label>Hora de Inicio (Servicio) *</label>
+                            <input type="time" id="horaInicioEvento" onchange="calcularDuracion()">
+                        </div>
+                        <div>
+                            <label>Hora de Finalizacion *</label>
+                            <input type="time" id="horaFinEvento" onchange="calcularDuracion()">
+                        </div>
+                    </div>
+                    
+                    <div class="info-evento-calculado">
+                        <p>Duracion calculada del evento: <span id="duracionCalculada">0.0</span> horas</p>
+                        <hr style="border: 0; border-top: 1px solid var(--border-color); margin: 8px 0;">
+                        <ul class="lista-notas">
+                            <li>Llegaremos <strong>1 hora antes</strong> de la hora de inicio acordada para montaje y preparacion.</li>
+                            <li>La hora de finalizacion marca el momento en que se retira la produccion de comida.</li>
+                            <li>Se aplicara un cargo adicional del <strong>5%</strong> sobre el total por concepto de traslado de equipo al lugar del evento.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn-enviar-form">VER FACTURA DE RESERVACION</button>
+                <p class="error-msg" id="errorReserva">Completa todos los campos obligatorios antes de continuar.</p>
+            </form>
+        </div>
+    </section>
+
+    <!-- SECCION 2: VER MENU (Solo lectura) -->
+    <section class="seccion-oculta" id="seccion-menu-solo">
+        <div class="encabezado-seccion">
+          <h2>NUESTRO MENU</h2>
+          <p>Conoce todas nuestras delicias costeras, bebidas y postres.</p>
+        </div>
+
+        <div class="catalogo-completo">
+            <div class="categorias" style="justify-content: center;">
+                <button class="btn-categoria cat-lectura activo" onclick="filtrarSoloLectura('comida', this)">&#127828; Comidas</button>
+                <button class="btn-categoria cat-lectura" onclick="filtrarSoloLectura('postre', this)">&#127856; Postres</button>
+                <button class="btn-categoria cat-lectura" onclick="filtrarSoloLectura('bebida', this)">&#127861; Bebidas</button>
+            </div>
+
+            <div class="menu-container max-ancho">
+                <!-- COMIDAS -->
+                <div class="platillo-lectura" data-cat="comida">
+                    <div class="platillo-img-wrapper">
+                        <img src="COMIDA/CEVICHE PERUANO.jpg" alt="Ceviche Peruano">
+                        <span class="etiqueta mas-vendido">Mas vendido</span>
+                    </div>
+                    <div class="info-lectura">
+                        <h3>CEVICHE PERUANO</h3>
+                        <p>Pesca del dia marinada en leche de tigre con el toque de la casa.</p>
+                        <span class="precio-lectura">Q75</span>
+                    </div>
+                </div>
+                <div class="platillo-lectura" data-cat="comida">
+                    <div class="platillo-img-wrapper">
+                        <img src="COMIDA/PESCADO FRITO.jpg" alt="Pescado Frito Entero">
+                    </div>
+                    <div class="info-lectura">
+                        <h3>PESCADO FRITO ENTERO</h3>
+                        <p>Acompanado de patacones, ensalada fresca y limon.</p>
+                        <span class="precio-lectura">Q90</span>
+                    </div>
+                </div>
+                <div class="platillo-lectura" data-cat="comida">
+                    <div class="platillo-img-wrapper">
+                        <img src="COMIDA/CALDO DE MARISCOS.jpg" alt="Caldo de Mariscos">
+                        <span class="etiqueta recom">Recomendado</span>
+                    </div>
+                    <div class="info-lectura">
+                        <h3>CALDO DE MARISCOS</h3>
+                        <p>Cangrejo, camaron, pescado y mejillones en un caldo levanta muertos.</p>
+                        <span class="precio-lectura">Q110</span>
+                    </div>
+                </div>
+                <div class="platillo-lectura" data-cat="comida">
+                    <div class="platillo-img-wrapper">
+                        <img src="COMIDA/TACOS DE BIRRIA.jpg" alt="Tacos de Birria">
+                    </div>
+                    <div class="info-lectura">
+                        <h3>TACOS DE BIRRIA</h3>
+                        <p>3 tacos de birria con consome, cebolla, cilantro y limon.</p>
+                        <span class="precio-lectura">Q55</span>
+                    </div>
+                </div>
+                <div class="platillo-lectura" data-cat="comida">
+                    <div class="platillo-img-wrapper">
+                        <img src="COMIDA/CAMARONES AL AJILLO.jpg" alt="Camarones al Ajillo">
+                        <span class="etiqueta nuevo">Nuevo</span>
+                    </div>
+                    <div class="info-lectura">
+                        <h3>CAMARONES AL AJILLO</h3>
+                        <p>Camarones jumbo banados en mantequilla, ajo y guindilla.</p>
+                        <span class="precio-lectura">Q85</span>
+                    </div>
+                </div>
+                <div class="platillo-lectura" data-cat="comida">
+                    <div class="platillo-img-wrapper">
+                        <img src="COMIDA/PULPO A LA PARRILA.jpg" alt="Pulpo a la Parrilla">
+                        <span class="etiqueta recom">Recomendado</span>
+                    </div>
+                    <div class="info-lectura">
+                        <h3>PULPO A LA PARRILLA</h3>
+                        <p>Tentaculos tiernos asados a las brasas con chimichurri y papas.</p>
+                        <span class="precio-lectura">Q120</span>
+                    </div>
+                </div>
+
+                <!-- POSTRES -->
+                <div class="platillo-lectura" data-cat="postre" style="display:none;">
+                    <div class="platillo-img-wrapper">
+                        <img src="POSTRES/PIE DE FRUTOS ROJOS.jpg" alt="Pie de Frutos Rojos">
+                    </div>
+                    <div class="info-lectura">
+                        <h3>PIE DE FRUTOS ROJOS</h3>
+                        <p>Base crujiente rellena de mermelada artesanal de moras y fresas.</p>
+                        <span class="precio-lectura">Q35</span>
+                    </div>
+                </div>
+                <div class="platillo-lectura" data-cat="postre" style="display:none;">
+                    <div class="platillo-img-wrapper">
+                        <img src="POSTRES/TARTALETA DE MANGO.jpg" alt="Tartaleta de Mango">
+                    </div>
+                    <div class="info-lectura">
+                        <h3>TARTALETA DE MANGO</h3>
+                        <p>Crema pastelera suave coronada con laminas de mango fresco.</p>
+                        <span class="precio-lectura">Q30</span>
+                    </div>
+                </div>
+                <div class="platillo-lectura" data-cat="postre" style="display:none;">
+                    <div class="platillo-img-wrapper">
+                        <img src="POSTRES/PIE DE LIMON.jpg" alt="Pie de Limon">
+                        <span class="etiqueta mas-vendido">Mas vendido</span>
+                    </div>
+                    <div class="info-lectura">
+                        <h3>PIE DE LIMON</h3>
+                        <p>El clasico acidito con una nube de merengue tostado encima.</p>
+                        <span class="precio-lectura">Q30</span>
+                    </div>
+                </div>
+                <div class="platillo-lectura" data-cat="postre" style="display:none;">
+                    <div class="platillo-img-wrapper">
+                        <img src="POSTRES/CHEESECAKE TROPICALE BANNE.jpg" alt="Cheesecake de Maracuya">
+                        <span class="etiqueta nuevo">Nuevo</span>
+                    </div>
+                    <div class="info-lectura">
+                        <h3>CHEESECAKE TROPICAL</h3>
+                        <p>Cremoso de queso con jalea de frutas tropicales y toque citrico.</p>
+                        <span class="precio-lectura">Q40</span>
+                    </div>
+                </div>
+                <div class="platillo-lectura" data-cat="postre" style="display:none;">
+                    <div class="platillo-img-wrapper">
+                        <img src="POSTRES/CHEESECAKE DE MORA.jpg" alt="Cheesecake de Mora">
+                    </div>
+                    <div class="info-lectura">
+                        <h3>CHEESECAKE DE MORA</h3>
+                        <p>Cremoso de queso coronado con salsa artesanal de mora fresca.</p>
+                        <span class="precio-lectura">Q40</span>
+                    </div>
+                </div>
+                <div class="platillo-lectura" data-cat="postre" style="display:none;">
+                    <div class="platillo-img-wrapper">
+                        <img src="POSTRES/YOGURT CON FRUTAS TROPICALES.jpg" alt="Yogurt con Frutas">
+                    </div>
+                    <div class="info-lectura">
+                        <h3>YOGURT CON FRUTAS TROPICALES</h3>
+                        <p>Yogurt natural con mix de frutas tropicales frescas de temporada.</p>
+                        <span class="precio-lectura">Q35</span>
+                    </div>
+                </div>
+
+                <!-- BEBIDAS -->
+                <div class="platillo-lectura" data-cat="bebida" style="display:none;">
+                    <div class="platillo-img-wrapper">
+                        <img src="BEBIDAS/PIÑA COLADA.webp" alt="Pina Colada">
+                        <span class="etiqueta recom">Recomendado</span>
+                    </div>
+                    <div class="info-lectura">
+                        <h3>PINA COLADA</h3>
+                        <p>Ron, crema de coco y jugo de pina, estilo tropical.</p>
+                        <span class="precio-lectura">Q45</span>
+                    </div>
+                </div>
+                <div class="platillo-lectura" data-cat="bebida" style="display:none;">
+                    <div class="platillo-img-wrapper">
+                        <img src="BEBIDAS/MARGARITA.jpg" alt="Margarita Clasica">
+                    </div>
+                    <div class="info-lectura">
+                        <h3>MARGARITA CLASICA</h3>
+                        <p>Tequila, triple sec y limon con borde escarchado de sal.</p>
+                        <span class="precio-lectura">Q40</span>
+                    </div>
+                </div>
+                <div class="platillo-lectura" data-cat="bebida" style="display:none;">
+                    <div class="platillo-img-wrapper">
+                        <img src="BEBIDAS/MOJITO CUBANO.webp" alt="Mojito Cubano">
+                        <span class="etiqueta mas-vendido">Mas vendido</span>
+                    </div>
+                    <div class="info-lectura">
+                        <h3>MOJITO CUBANO</h3>
+                        <p>Ron blanco, hierbabuena fresca, azucar, limon y soda.</p>
+                        <span class="precio-lectura">Q40</span>
+                    </div>
+                </div>
+                <div class="platillo-lectura" data-cat="bebida" style="display:none;">
+                    <div class="platillo-img-wrapper">
+                        <img src="BEBIDAS/SMOOTIE BANNE.jpg" alt="Smoothie Tropical">
+                    </div>
+                    <div class="info-lectura">
+                        <h3>SMOOTHIE TROPICAL BANNE</h3>
+                        <p>Mezcla frozen de mango, pina y un toque de maracuya.</p>
+                        <span class="precio-lectura">Q30</span>
+                    </div>
+                </div>
+                <div class="platillo-lectura" data-cat="bebida" style="display:none;">
+                    <div class="platillo-img-wrapper">
+                        <img src="BEBIDAS/CANTARITO.webp" alt="Cantarito">
+                        <span class="etiqueta nuevo">Nuevo</span>
+                    </div>
+                    <div class="info-lectura">
+                        <h3>CANTARITO</h3>
+                        <p>Tequila, jugo de naranja, limon y sangrita en cantarito de barro.</p>
+                        <span class="precio-lectura">Q45</span>
+                    </div>
+                </div>
+                <div class="platillo-lectura" data-cat="bebida" style="display:none;">
+                    <div class="platillo-img-wrapper">
+                        <img src="BEBIDAS/FROZEN DAIQUIRI.jpg" alt="Frozen Daiquiri">
+                    </div>
+                    <div class="info-lectura">
+                        <h3>FROZEN DAIQUIRI</h3>
+                        <p>Ron, limon y azucar, servido bien frozen con hielo raspado.</p>
+                        <span class="precio-lectura">Q45</span>
+                    </div>
+                </div>
+                <div class="platillo-lectura" data-cat="bebida" style="display:none;">
+                    <div class="platillo-img-wrapper">
+                        <img src="BEBIDAS/GASEOSAS.avif" alt="Gaseosas">
+                    </div>
+                    <div class="info-lectura">
+                        <h3>GASEOSAS</h3>
+                        <p>Coca-Cola, Sprite, Fanta u otras opciones frias.</p>
+                        <span class="precio-lectura">Q10</span>
+                    </div>
+                </div>
+                <div class="platillo-lectura" data-cat="bebida" style="display:none;">
+                    <div class="platillo-img-wrapper">
+                        <img src="BEBIDAS/SMOOTHIE DE FRESA.webp" alt="Smoothie de Fresa">
+                        <span class="etiqueta recom">Recomendado</span>
+                    </div>
+                    <div class="info-lectura">
+                        <h3>SMOOTHIE DE FRESA</h3>
+                        <p>Fresas frescas licuadas con yogurt natural y un toque de miel.</p>
+                        <span class="precio-lectura">Q35</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCION 3: PEDIR A DOMICILIO -->
+    <section class="seccion-oculta" id="seccion-pedido">
+      <div class="encabezado-seccion">
+        <h2>PIDE Y DISFRUTA EN CASA</h2>
+        <p>Selecciona tus platillos y arma tu pedido a domicilio.</p>
+      </div>
+
+      <div class="layout-pedido">
+        <div class="catalogo-wrapper">
+          <div class="categorias">
+            <button class="btn-categoria cat-compra activo" onclick="filtrarCompra('comida', this)">&#127828; Comidas</button>
+            <button class="btn-categoria cat-compra" onclick="filtrarCompra('postre', this)">&#127856; Postres</button>
+            <button class="btn-categoria cat-compra" onclick="filtrarCompra('bebida', this)">&#127861; Bebidas</button>
+          </div>
+
+          <div class="menu-container">
+            <!-- COMIDAS -->
+            <div class="platillo" data-cat="comida">
+                <div class="platillo-img-wrapper">
+                    <img src="COMIDA/CEVICHE PERUANO.jpg" alt="Ceviche">
+                    <span class="etiqueta mas-vendido">Mas vendido</span>
+                </div>
+                <div class="platillo-info">
+                    <h2 class="platillo-nombre">CEVICHE PERUANO</h2>
+                    <p class="platillo-descripcion">Pesca del dia marinada en leche de tigre.</p>
+                    <div class="platillo-footer">
+                        <span class="platillo-precio">Q75</span>
+                        <div class="controles"><button class="btn-cantidad" onclick="cambiarCantidad('CEVICHE PERUANO', 75, -1)">-</button><span class="contador-numero" id="cant-CEVICHE PERUANO">0</span><button class="btn-cantidad" onclick="cambiarCantidad('CEVICHE PERUANO', 75, 1)">+</button></div>
+                    </div>
+                </div>
+            </div>
+            <div class="platillo" data-cat="comida">
+                <div class="platillo-img-wrapper">
+                    <img src="COMIDA/PESCADO FRITO.jpg" alt="Pescado Frito">
+                </div>
+                <div class="platillo-info">
+                    <h2 class="platillo-nombre">PESCADO FRITO</h2>
+                    <p class="platillo-descripcion">Entero, acompanado de patacones y ensalada.</p>
+                    <div class="platillo-footer">
+                        <span class="platillo-precio">Q90</span>
+                        <div class="controles"><button class="btn-cantidad" onclick="cambiarCantidad('PESCADO FRITO', 90, -1)">-</button><span class="contador-numero" id="cant-PESCADO FRITO">0</span><button class="btn-cantidad" onclick="cambiarCantidad('PESCADO FRITO', 90, 1)">+</button></div>
+                    </div>
+                </div>
+            </div>
+            <div class="platillo" data-cat="comida">
+                <div class="platillo-img-wrapper">
+                    <img src="COMIDA/CALDO DE MARISCOS.jpg" alt="Caldo de Mariscos">
+                    <span class="etiqueta recom">Recomendado</span>
+                </div>
+                <div class="platillo-info">
+                    <h2 class="platillo-nombre">CALDO DE MARISCOS</h2>
+                    <p class="platillo-descripcion">Cangrejo, camaron, pescado y mejillones.</p>
+                    <div class="platillo-footer">
+                        <span class="platillo-precio">Q110</span>
+                        <div class="controles"><button class="btn-cantidad" onclick="cambiarCantidad('CALDO DE MARISCOS', 110, -1)">-</button><span class="contador-numero" id="cant-CALDO DE MARISCOS">0</span><button class="btn-cantidad" onclick="cambiarCantidad('CALDO DE MARISCOS', 110, 1)">+</button></div>
+                    </div>
+                </div>
+            </div>
+            <div class="platillo" data-cat="comida">
+                <div class="platillo-img-wrapper">
+                    <img src="COMIDA/TACOS DE BIRRIA.jpg" alt="Tacos de Birria">
+                </div>
+                <div class="platillo-info">
+                    <h2 class="platillo-nombre">TACOS DE BIRRIA</h2>
+                    <p class="platillo-descripcion">3 tacos con consome, cebolla, cilantro y limon.</p>
+                    <div class="platillo-footer">
+                        <span class="platillo-precio">Q55</span>
+                        <div class="controles"><button class="btn-cantidad" onclick="cambiarCantidad('TACOS DE BIRRIA', 55, -1)">-</button><span class="contador-numero" id="cant-TACOS DE BIRRIA">0</span><button class="btn-cantidad" onclick="cambiarCantidad('TACOS DE BIRRIA', 55, 1)">+</button></div>
+                    </div>
+                </div>
+            </div>
+            <div class="platillo" data-cat="comida">
+                <div class="platillo-img-wrapper">
+                    <img src="COMIDA/CAMARONES AL AJILLO.jpg" alt="Camarones">
+                    <span class="etiqueta nuevo">Nuevo</span>
+                </div>
+                <div class="platillo-info">
+                    <h2 class="platillo-nombre">CAMARONES AL AJILLO</h2>
+                    <p class="platillo-descripcion">Jumbos banados en mantequilla, ajo y guindilla.</p>
+                    <div class="platillo-footer">
+                        <span class="platillo-precio">Q85</span>
+                        <div class="controles"><button class="btn-cantidad" onclick="cambiarCantidad('CAMARONES AL AJILLO', 85, -1)">-</button><span class="contador-numero" id="cant-CAMARONES AL AJILLO">0</span><button class="btn-cantidad" onclick="cambiarCantidad('CAMARONES AL AJILLO', 85, 1)">+</button></div>
+                    </div>
+                </div>
+            </div>
+            <div class="platillo" data-cat="comida">
+                <div class="platillo-img-wrapper">
+                    <img src="COMIDA/PULPO A LA PARRILA.jpg" alt="Pulpo">
+                    <span class="etiqueta recom">Recomendado</span>
+                </div>
+                <div class="platillo-info">
+                    <h2 class="platillo-nombre">PULPO A LA PARRILLA</h2>
+                    <p class="platillo-descripcion">Asado a las brasas con chimichurri.</p>
+                    <div class="platillo-footer">
+                        <span class="platillo-precio">Q120</span>
+                        <div class="controles"><button class="btn-cantidad" onclick="cambiarCantidad('PULPO A LA PARRILLA', 120, -1)">-</button><span class="contador-numero" id="cant-PULPO A LA PARRILLA">0</span><button class="btn-cantidad" onclick="cambiarCantidad('PULPO A LA PARRILLA', 120, 1)">+</button></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- POSTRES -->
+            <div class="platillo" data-cat="postre" style="display:none;">
+                <div class="platillo-img-wrapper"><img src="POSTRES/PIE DE FRUTOS ROJOS.jpg" alt="Pie Frutos Rojos"></div>
+                <div class="platillo-info">
+                    <h2 class="platillo-nombre">PIE DE FRUTOS ROJOS</h2>
+                    <p class="platillo-descripcion">Relleno de mermelada artesanal de moras.</p>
+                    <div class="platillo-footer">
+                        <span class="platillo-precio">Q35</span>
+                        <div class="controles"><button class="btn-cantidad" onclick="cambiarCantidad('PIE DE FRUTOS ROJOS', 35, -1)">-</button><span class="contador-numero" id="cant-PIE DE FRUTOS ROJOS">0</span><button class="btn-cantidad" onclick="cambiarCantidad('PIE DE FRUTOS ROJOS', 35, 1)">+</button></div>
+                    </div>
+                </div>
+            </div>
+            <div class="platillo" data-cat="postre" style="display:none;">
+                <div class="platillo-img-wrapper"><img src="POSTRES/TARTALETA DE MANGO.jpg" alt="Tartaleta Mango"></div>
+                <div class="platillo-info">
+                    <h2 class="platillo-nombre">TARTALETA DE MANGO</h2>
+                    <p class="platillo-descripcion">Crema pastelera y laminas de mango fresco.</p>
+                    <div class="platillo-footer">
+                        <span class="platillo-precio">Q30</span>
+                        <div class="controles"><button class="btn-cantidad" onclick="cambiarCantidad('TARTALETA DE MANGO', 30, -1)">-</button><span class="contador-numero" id="cant-TARTALETA DE MANGO">0</span><button class="btn-cantidad" onclick="cambiarCantidad('TARTALETA DE MANGO', 30, 1)">+</button></div>
+                    </div>
+                </div>
+            </div>
+            <div class="platillo" data-cat="postre" style="display:none;">
+                <div class="platillo-img-wrapper">
+                    <img src="POSTRES/PIE DE LIMON.jpg" alt="Pie Limon">
+                    <span class="etiqueta mas-vendido">Mas vendido</span>
+                </div>
+                <div class="platillo-info">
+                    <h2 class="platillo-nombre">PIE DE LIMON</h2>
+                    <p class="platillo-descripcion">Clasico acidito con merengue tostado.</p>
+                    <div class="platillo-footer">
+                        <span class="platillo-precio">Q30</span>
+                        <div class="controles"><button class="btn-cantidad" onclick="cambiarCantidad('PIE DE LIMON', 30, -1)">-</button><span class="contador-numero" id="cant-PIE DE LIMON">0</span><button class="btn-cantidad" onclick="cambiarCantidad('PIE DE LIMON', 30, 1)">+</button></div>
+                    </div>
+                </div>
+            </div>
+            <div class="platillo" data-cat="postre" style="display:none;">
+                <div class="platillo-img-wrapper">
+                    <img src="POSTRES/CHEESECAKE TROPICALE BANNE.jpg" alt="Cheesecake">
+                    <span class="etiqueta nuevo">Nuevo</span>
+                </div>
+                <div class="platillo-info">
+                    <h2 class="platillo-nombre">CHEESECAKE TROPICAL</h2>
+                    <p class="platillo-descripcion">Cremoso con jalea de frutas tropicales.</p>
+                    <div class="platillo-footer">
+                        <span class="platillo-precio">Q40</span>
+                        <div class="controles"><button class="btn-cantidad" onclick="cambiarCantidad('CHEESECAKE TROPICAL', 40, -1)">-</button><span class="contador-numero" id="cant-CHEESECAKE TROPICAL">0</span><button class="btn-cantidad" onclick="cambiarCantidad('CHEESECAKE TROPICAL', 40, 1)">+</button></div>
+                    </div>
+                </div>
+            </div>
+            <div class="platillo" data-cat="postre" style="display:none;">
+                <div class="platillo-img-wrapper"><img src="POSTRES/CHEESECAKE DE MORA.jpg" alt="Cheesecake Mora"></div>
+                <div class="platillo-info">
+                    <h2 class="platillo-nombre">CHEESECAKE DE MORA</h2>
+                    <p class="platillo-descripcion">Cremoso con salsa artesanal de mora fresca.</p>
+                    <div class="platillo-footer">
+                        <span class="platillo-precio">Q40</span>
+                        <div class="controles"><button class="btn-cantidad" onclick="cambiarCantidad('CHEESECAKE DE MORA', 40, -1)">-</button><span class="contador-numero" id="cant-CHEESECAKE DE MORA">0</span><button class="btn-cantidad" onclick="cambiarCantidad('CHEESECAKE DE MORA', 40, 1)">+</button></div>
+                    </div>
+                </div>
+            </div>
+            <div class="platillo" data-cat="postre" style="display:none;">
+                <div class="platillo-img-wrapper"><img src="POSTRES/YOGURT CON FRUTAS TROPICALES.jpg" alt="Yogurt Frutas"></div>
+                <div class="platillo-info">
+                    <h2 class="platillo-nombre">YOGURT CON FRUTAS</h2>
+                    <p class="platillo-descripcion">Yogurt natural con mix de frutas tropicales.</p>
+                    <div class="platillo-footer">
+                        <span class="platillo-precio">Q35</span>
+                        <div class="controles"><button class="btn-cantidad" onclick="cambiarCantidad('YOGURT CON FRUTAS', 35, -1)">-</button><span class="contador-numero" id="cant-YOGURT CON FRUTAS">0</span><button class="btn-cantidad" onclick="cambiarCantidad('YOGURT CON FRUTAS', 35, 1)">+</button></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- BEBIDAS -->
+            <div class="platillo" data-cat="bebida" style="display:none;">
+                <div class="platillo-img-wrapper">
+                    <img src="BEBIDAS/PIÑA COLADA.webp" alt="Pina Colada">
+                    <span class="etiqueta recom">Recomendado</span>
+                </div>
+                <div class="platillo-info">
+                    <h2 class="platillo-nombre">PINA COLADA</h2>
+                    <p class="platillo-descripcion">Ron, crema de coco y jugo de pina.</p>
+                    <div class="platillo-footer">
+                        <span class="platillo-precio">Q45</span>
+                        <div class="controles"><button class="btn-cantidad" onclick="cambiarCantidad('PINA COLADA', 45, -1)">-</button><span class="contador-numero" id="cant-PINA COLADA">0</span><button class="btn-cantidad" onclick="cambiarCantidad('PINA COLADA', 45, 1)">+</button></div>
+                    </div>
+                </div>
+            </div>
+            <div class="platillo" data-cat="bebida" style="display:none;">
+                <div class="platillo-img-wrapper"><img src="BEBIDAS/MARGARITA.jpg" alt="Margarita"></div>
+                <div class="platillo-info">
+                    <h2 class="platillo-nombre">MARGARITA CLASICA</h2>
+                    <p class="platillo-descripcion">Tequila, triple sec y limon con borde de sal.</p>
+                    <div class="platillo-footer">
+                        <span class="platillo-precio">Q40</span>
+                        <div class="controles"><button class="btn-cantidad" onclick="cambiarCantidad('MARGARITA CLASICA', 40, -1)">-</button><span class="contador-numero" id="cant-MARGARITA CLASICA">0</span><button class="btn-cantidad" onclick="cambiarCantidad('MARGARITA CLASICA', 40, 1)">+</button></div>
+                    </div>
+                </div>
+            </div>
+            <div class="platillo" data-cat="bebida" style="display:none;">
+                <div class="platillo-img-wrapper">
+                    <img src="BEBIDAS/MOJITO CUBANO.webp" alt="Mojito">
+                    <span class="etiqueta mas-vendido">Mas vendido</span>
+                </div>
+                <div class="platillo-info">
+                    <h2 class="platillo-nombre">MOJITO CUBANO</h2>
+                    <p class="platillo-descripcion">Ron blanco, hierbabuena fresca y soda.</p>
+                    <div class="platillo-footer">
+                        <span class="platillo-precio">Q40</span>
+                        <div class="controles"><button class="btn-cantidad" onclick="cambiarCantidad('MOJITO CUBANO', 40, -1)">-</button><span class="contador-numero" id="cant-MOJITO CUBANO">0</span><button class="btn-cantidad" onclick="cambiarCantidad('MOJITO CUBANO', 40, 1)">+</button></div>
+                    </div>
+                </div>
+            </div>
+            <div class="platillo" data-cat="bebida" style="display:none;">
+                <div class="platillo-img-wrapper"><img src="BEBIDAS/SMOOTIE BANNE.jpg" alt="Smoothie"></div>
+                <div class="platillo-info">
+                    <h2 class="platillo-nombre">SMOOTHIE TROPICAL</h2>
+                    <p class="platillo-descripcion">Frozen de mango, pina y maracuya.</p>
+                    <div class="platillo-footer">
+                        <span class="platillo-precio">Q30</span>
+                        <div class="controles"><button class="btn-cantidad" onclick="cambiarCantidad('SMOOTHIE TROPICAL', 30, -1)">-</button><span class="contador-numero" id="cant-SMOOTHIE TROPICAL">0</span><button class="btn-cantidad" onclick="cambiarCantidad('SMOOTHIE TROPICAL', 30, 1)">+</button></div>
+                    </div>
+                </div>
+            </div>
+            <div class="platillo" data-cat="bebida" style="display:none;">
+                <div class="platillo-img-wrapper">
+                    <img src="BEBIDAS/CANTARITO.webp" alt="Cantarito">
+                    <span class="etiqueta nuevo">Nuevo</span>
+                </div>
+                <div class="platillo-info">
+                    <h2 class="platillo-nombre">CANTARITO</h2>
+                    <p class="platillo-descripcion">Tequila, naranja, limon y sangrita en cantarito de barro.</p>
+                    <div class="platillo-footer">
+                        <span class="platillo-precio">Q45</span>
+                        <div class="controles"><button class="btn-cantidad" onclick="cambiarCantidad('CANTARITO', 45, -1)">-</button><span class="contador-numero" id="cant-CANTARITO">0</span><button class="btn-cantidad" onclick="cambiarCantidad('CANTARITO', 45, 1)">+</button></div>
+                    </div>
+                </div>
+            </div>
+            <div class="platillo" data-cat="bebida" style="display:none;">
+                <div class="platillo-img-wrapper"><img src="BEBIDAS/FROZEN DAIQUIRI.jpg" alt="Frozen Daiquiri"></div>
+                <div class="platillo-info">
+                    <h2 class="platillo-nombre">FROZEN DAIQUIRI</h2>
+                    <p class="platillo-descripcion">Ron, limon y azucar, servido bien frozen.</p>
+                    <div class="platillo-footer">
+                        <span class="platillo-precio">Q45</span>
+                        <div class="controles"><button class="btn-cantidad" onclick="cambiarCantidad('FROZEN DAIQUIRI', 45, -1)">-</button><span class="contador-numero" id="cant-FROZEN DAIQUIRI">0</span><button class="btn-cantidad" onclick="cambiarCantidad('FROZEN DAIQUIRI', 45, 1)">+</button></div>
+                    </div>
+                </div>
+            </div>
+            <div class="platillo" data-cat="bebida" style="display:none;">
+                <div class="platillo-img-wrapper"><img src="BEBIDAS/GASEOSAS.avif" alt="Gaseosas"></div>
+                <div class="platillo-info">
+                    <h2 class="platillo-nombre">GASEOSAS</h2>
+                    <p class="platillo-descripcion">Coca-Cola, Sprite, Fanta u otras opciones frias.</p>
+                    <div class="platillo-footer">
+                        <span class="platillo-precio">Q10</span>
+                        <div class="controles"><button class="btn-cantidad" onclick="cambiarCantidad('GASEOSAS', 10, -1)">-</button><span class="contador-numero" id="cant-GASEOSAS">0</span><button class="btn-cantidad" onclick="cambiarCantidad('GASEOSAS', 10, 1)">+</button></div>
+                    </div>
+                </div>
+            </div>
+            <div class="platillo" data-cat="bebida" style="display:none;">
+                <div class="platillo-img-wrapper">
+                    <img src="BEBIDAS/SMOOTHIE DE FRESA.webp" alt="Smoothie de Fresa">
+                    <span class="etiqueta recom">Recomendado</span>
+                </div>
+                <div class="platillo-info">
+                    <h2 class="platillo-nombre">SMOOTHIE DE FRESA</h2>
+                    <p class="platillo-descripcion">Fresas frescas licuadas con yogurt y miel.</p>
+                    <div class="platillo-footer">
+                        <span class="platillo-precio">Q35</span>
+                        <div class="controles"><button class="btn-cantidad" onclick="cambiarCantidad('SMOOTHIE DE FRESA', 35, -1)">-</button><span class="contador-numero" id="cant-SMOOTHIE DE FRESA">0</span><button class="btn-cantidad" onclick="cambiarCantidad('SMOOTHIE DE FRESA', 35, 1)">+</button></div>
+                    </div>
+                </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Sidebar Carrito -->
+        <div class="resumen-wrapper">
+          <div class="factura-sidebar">
+            <h3>TU CARRITO</h3>
+            
+            <div id="listaFacturaSidebar" class="lista-items-sidebar">
+              <p class="texto-vacio">Aun no has seleccionado platillos.</p>
+            </div>
+
+            <div class="total-sidebar">
+              <span>Total a pagar:</span>
+              <span>Q<span id="totalFacturaSidebar">0</span></span>
+            </div>
+
+            <div class="tipo-entrega-sidebar">
+              <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 5px;">Datos de entrega obligatorios:</p>
+              
+              <div class="extra-info active">
+                  <input type="text" id="nombreEnvioSidebar" placeholder="Nombre completo *" required>
+                  <p class="error-msg" id="errorCarrito">Debe seleccionar al menos un platillo.</p>
+                  <input type="text" id="cantonEnvioSidebar" placeholder="Canton / Sector / Direccion *" required>
+                  <input type="tel" id="telEnvioSidebar" placeholder="Numero de celular *" required>
+                  <p class="error-msg" id="errorDatosEnvio">Completa nombre, direccion y telefono.</p>
+              </div>
+            </div>
+
+            <button class="btn-ws-sidebar" onclick="abrirFacturaVisual()">
+              VER FACTURA Y SOLICITAR
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECCION: CONTACTO -->
+    <section class="seccion-oculta" id="seccion-contacto">
+      <div class="encabezado-seccion">
+        <h2>CONTACTANOS</h2>
+        <p>Estamos listos para atenderte.</p>
+      </div>
+      <div class="contacto-grid">
+        <a href="https://wa.me/50257722662" target="_blank" class="contacto-card">
+          <span>&#128241;</span>
+          <h3>WhatsApp Linea 1</h3>
+          <p>5772-2662</p>
+        </a>
+        <a href="https://wa.me/50233822921" target="_blank" class="contacto-card">
+          <span>&#128241;</span>
+          <h3>WhatsApp Linea 2</h3>
+          <p>3382-2921</p>
+        </a>
+        <a href="https://instagram.com/srg_nde" target="_blank" class="contacto-card">
+          <span>&#128247;</span>
+          <h3>Instagram</h3>
+          <p>@srg_nde</p>
+        </a>
+      </div>
+      <div class="propietarios-grid">
+        <div class="propietario-card">
+          <h4>SERGIO ANDRE AGUSTIN DE LEON</h4>
+          <p>Propietario / Chef</p>
+          <a href="https://wa.me/50257722662" target="_blank">5772-2662</a>
+        </div>
+        <div class="propietario-card">
+          <h4>BALTAZAR YOVANNY RAYMUNDO CEDILLO</h4>
+          <p>Propietario / Chef</p>
+          <a href="https://wa.me/50233822921" target="_blank">3382-2921</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECCION: RESEÑAS -->
+    <section class="seccion-oculta" id="seccion-resenas">
+      <div class="encabezado-seccion">
+        <h2>LO QUE DICEN DE NOSOTROS</h2>
+        <p>Nuestros clientes hablan por nosotros.</p>
+      </div>
+      <div class="resenas-grid">
+        <div class="resena-card">
+          <div class="resena-estrellas">&#11088;&#11088;&#11088;&#11088;&#11088;</div>
+          <p class="resena-texto">"El mejor ceviche que he probado en toda la costa. La atencion es de primera y el ambiente de noche con la musica en vivo es increible. Volveremos el finde sin falta."</p>
+          <div class="resena-autor">
+            <strong>María Fernanda López</strong>
+            <span>Google Reviews</span>
+          </div>
+        </div>
+        <div class="resena-card">
+          <div class="resena-estrellas">&#11088;&#11088;&#11088;&#11088;&#11088;</div>
+          <p class="resena-texto">"Hicimos el cumpleaños de mi hijo ahi y fue perfecto. El pulpo a la parrilla es espectacular y los smoothies kids le encantaron a toda la banda. 100% recomendado."</p>
+          <div class="resena-autor">
+            <strong>Carlos Eduardo Méndez</strong>
+            <span>Instagram DM</span>
+          </div>
+        </div>
+        <div class="resena-card">
+          <div class="resena-estrellas">&#11088;&#11088;&#11088;&#11088;&#11088;</div>
+          <p class="resena-texto">"La pina colada es top y los tacos de birria me volaron la cabeza. Precios buenos, porcion generosa y el personal bien atento. Ya soy cliente habitual."</p>
+          <div class="resena-autor">
+            <strong>Ana Lucía Martínez</strong>
+            <span>Google Reviews</span>
+          </div>
+        </div>
+        <div class="resena-card">
+          <div class="resena-estrellas">&#11088;&#11088;&#11088;&#11088;&#11088;</div>
+          <p class="resena-texto">"Pedimos delivery y llego rapidito. El caldo de mariscos venia bien caliente y el pescado frito con patacones estaba delicioso. La mejor opcion para cenar en casa."</p>
+          <div class="resena-autor">
+            <strong>José Andrés Gutiérrez</strong>
+            <span>WhatsApp</span>
+          </div>
+        </div>
+        <div class="resena-card">
+          <div class="resena-estrellas">&#11088;&#11088;&#11088;&#11088;&#11088;</div>
+          <p class="resena-texto">"La mejor playa para parrillar con los amigos. El personal es bien buena onda, la comida espectacular y el ambiente nocturno no tiene comparación. BANNE es el lugar."</p>
+          <div class="resena-autor">
+            <strong>Luis Diego Hernández</strong>
+            <span>Google Reviews</span>
+          </div>
+        </div>
+        <div class="resena-card">
+          <div class="resena-estrellas">&#11088;&#11088;&#11088;&#11088;&#11088;</div>
+          <p class="resena-texto">"El cheesecake de mora es para morirse. Pedí uno para llevar y mis amigos no lo podían creer. Los dulces artesanales de BANNE son otra cosa. Volveré por más."</p>
+          <div class="resena-autor">
+            <strong>Valentina Solórzano</strong>
+            <span>Instagram DM</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- MODAL DE FACTURA -->
+  <div id="modalFactura" class="modal-overlay" style="display: none;">
+    <div class="ticket-factura">
+        <div id="ticketPedido" class="ticket-printable">
+            <div class="ticket-header">
+                <h2>BANNE 
+                  <img src="logo BANNE pulpito.png" alt="BANNE" style="width: 24px; vertical-align: middle;">
+                </h2>
+                <p>RESTAURANTE</p>
+                <p class="linea-punteada">--------------------------------</p>
+                <p id="tituloTicketTipo">DESCRIPCION DE PEDIDO</p>
+                <p class="linea-punteada">--------------------------------</p>
+            </div>
+            
+            <div id="ticketDetalle" class="ticket-body">
+            </div>
+            
+            <div class="ticket-footer">
+                <p class="linea-punteada">--------------------------------</p>
+                <div class="ticket-total">
+                    <span>TOTAL:</span>
+                    <span>Q<span id="ticketTotal">0</span></span>
+                </div>
+                <p class="linea-punteada">--------------------------------</p>
+                <div id="ticketDatosCliente" class="ticket-datos">
+                </div>
+            </div>
+        </div>
+        
+        <div class="opciones-envio">
+            <button class="btn-descargar-img" onclick="descargarFacturaPedido()">&#128247; Descargar Factura</button>
+            <p class="instruccion-envio">Elige la linea para enviar tu solicitud:</p>
+            <button class="btn-wa-opcion" onclick="enviarWhatsAppReal('50257722662')">
+                Linea 1 (5772-2662)
+            </button>
+            <button class="btn-wa-opcion" onclick="enviarWhatsAppReal('50233822921')">
+                Linea 2 (3382-2921)
+            </button>
+            <button class="btn-cerrar-modal" onclick="cerrarFactura()">Volver</button>
+        </div>
+    </div>
+  </div>
+
+  <!-- MODAL DE FACTURA RESERVA -->
+  <div id="modalFacturaReserva" class="modal-overlay" style="display: none;">
+    <div class="ticket-factura">
+        <div id="ticketReserva" class="ticket-printable">
+            <div class="ticket-header">
+                <h2>BANNE 
+                  <img src="logo BANNE pulpito.png" alt="BANNE" style="width: 24px; vertical-align: middle;">
+                </h2>
+                <p>RESTAURANTE</p>
+                <p class="linea-punteada">--------------------------------</p>
+                <p id="tituloTicketReserva">RESERVA DE MESA</p>
+                <p class="linea-punteada">--------------------------------</p>
+            </div>
+            
+            <div id="ticketDetalleReserva" class="ticket-body" style="max-height: 200px;">
+            </div>
+            
+            <div class="ticket-footer">
+                <p class="linea-punteada">--------------------------------</p>
+                <div id="ticketDatosReserva" class="ticket-datos">
+                </div>
+                <p class="linea-punteada">--------------------------------</p>
+                <p style="font-size: 0.7rem; color: var(--text-muted); text-align: center; margin-top: 4px;">Gracias por preferir BANNE</p>
+            </div>
+        </div>
+        
+        <div class="acciones-factura-reserva">
+            <button class="btn-descargar-img" onclick="descargarFacturaReserva()">&#128247; Descargar Factura</button>
+            <p class="instruccion-envio">Elige la linea para enviar tu solicitud:</p>
+            <button class="btn-wa-opcion" onclick="enviarReservaWhatsApp('50257722662')">
+                Linea 1 (5772-2662)
+            </button>
+            <button class="btn-wa-opcion" onclick="enviarReservaWhatsApp('50233822921')">
+                Linea 2 (3382-2921)
+            </button>
+            <button class="btn-cerrar-modal" onclick="cerrarFacturaReserva()">Volver</button>
+        </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="footer-contenido">
+      <div class="footer-brand">
+        <h3>BANNE <img src="logo BANNE pulpito.png" alt="BANNE" class="pulpo-footer-img"></h3>
+        <p>Restaurante de comida costera y tradicional.</p>
+      </div>
+      <div class="footer-horario">
+        <p class="footer-horario-title">&#128337; Horario</p>
+        <p><strong>Restaurante:</strong> 10:00 AM - 8:00 PM</p>
+        <p><strong>Eventos y fiestas:</strong> 8:00 PM - 1:00 AM</p>
+      </div>
+      <div class="footer-links">
+        <a href="https://instagram.com/srg_nde" target="_blank">Instagram</a>
+        <a href="https://wa.me/50257722662" target="_blank">WhatsApp</a>
+      </div>
+      <div class="footer-copy">
+        <p>&copy; 2026 BANNE. Todos los derechos reservados.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="DOCS/script.js"></script>
+</body>
+</html>
